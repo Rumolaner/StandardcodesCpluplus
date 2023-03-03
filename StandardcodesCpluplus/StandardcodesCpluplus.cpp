@@ -1,5 +1,6 @@
 // StandardcodesCpluplus.cpp : Diese Datei enthält die Funktion "main". Hier beginnt und endet die Ausführung des Programms.
 //
+//Standardparameterlist: 32 34,56,23,56,86,42,23,65,32,45,57,23,56,23,55,57,22 linear bubble
 
 #include <iostream>
 
@@ -7,27 +8,43 @@ using namespace std;
 
 int main(int argc, char* argv[])
 {
-    int search = 0;
-    string list = "";
-    string seAlgo = "";
-    string soAlgo = "";
+    int iSearch = 0;
+    int iListArray[10];
+    string sList = "";
+    string sSeAlgo = "";
+    string sSoAlgo = "";
 
     if (argc <= 4) {
         cout << "Bitte Parameter eingeben. Reihenfolge: Suchwert, Suchliste (Komma getrennt), Suchalgorithmus, Sortieralgorithmus\n";
         return 1;
     }
     else {
-        search = atoi(argv[1]);
-        list = argv[2];
-        seAlgo = argv[3];
+        iSearch = atoi(argv[1]);
+        sList = argv[2];
+        sSeAlgo = argv[3];
 
         if (argc > 4) {
-            soAlgo = argv[4];
+            sSoAlgo = argv[4];
         }
     }
 
+    cout << "Search value: " << iSearch << '\n';
+    cout << "List: " << sList << '\n';
+    cout << "Search Algorithm: " << sSeAlgo << '\n';
+    cout << "Sort Algorithm: " << sSoAlgo << "\n\n";
 
-    cout << "Hello World!\n";
+    cout << "Checking list..." << "\n\n";
+    int i = 0;
+    int pos;
+    while ((pos = sList.find(',')) != std::string::npos) {
+        iListArray[i] = atoi(sList.substr(0, pos).c_str());
+        sList.erase(0, pos + 1);
+        i++;
+    }
+
+    cout << "Checking search algorithm..." << "\n\n";
+
+    cout << "Checking sort algorithm" << "\n\n";
 }
 
 // Programm ausführen: STRG+F5 oder Menüeintrag "Debuggen" > "Starten ohne Debuggen starten"
