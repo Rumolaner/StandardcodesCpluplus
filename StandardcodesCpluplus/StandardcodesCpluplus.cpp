@@ -47,15 +47,29 @@ int main(int argc, char* argv[])
         sList = "";
     }
 
+    cout << "Checking sort algorithm" << "\n\n";
+    if (sSoAlgo == "bubble") {
+        //SortLinear(iListArray, iSearch);
+    }
+    else if (sSoAlgo != ""){
+        cout << "Unbekannter Sortieralgorithmus: " << sSoAlgo << '\n';
+        return 2;
+    }
+
     cout << "Checking search algorithm..." << "\n\n";
     if (sSeAlgo == "linear") {
         SortLinear(iListArray, iSearch);
     }
+    else if (sSeAlgo == "binary") {
+        if (sSoAlgo == "") {
+            cout << "Binary Search benötigt eine sortierte Liste!\n";
+        }
+
+    }
     else {
-        cout << "Unbekannter Sortieralgorithmus: " << sSeAlgo << '\n';
+        cout << "Unbekannter Suchgorithmus: " << sSeAlgo << '\n';
         return 2;
     }
-    cout << "Checking sort algorithm" << "\n\n";
 }
 
 // Programm ausführen: STRG+F5 oder Menüeintrag "Debuggen" > "Starten ohne Debuggen starten"
