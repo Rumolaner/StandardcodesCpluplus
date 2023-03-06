@@ -51,6 +51,10 @@ int main(int argc, char* argv[])
     if (sSeAlgo == "linear") {
         SortLinear(iListArray, iSearch);
     }
+    else {
+        cout << "Unbekannter Sortieralgorithmus: " << sSeAlgo << '\n';
+        return 2;
+    }
     cout << "Checking sort algorithm" << "\n\n";
 }
 
