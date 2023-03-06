@@ -3,13 +3,14 @@
 //Standardparameterlist: 32 34,56,23,56,86,42,23,65,32,45,57,23,56,23,55,57,22 linear bubble
 
 #include <iostream>
+#include "../SCCplusplusSortLinear/SCCplusplusSortLinear.h"
 
 using namespace std;
 
 int main(int argc, char* argv[])
 {
     int iSearch = 0;
-    int iListArray[10];
+    int iListArray[17];
     string sList = "";
     string sSeAlgo = "";
     string sSoAlgo = "";
@@ -41,9 +42,15 @@ int main(int argc, char* argv[])
         sList.erase(0, pos + 1);
         i++;
     }
+    if (sList.length() > 0) {
+        iListArray[i] = atoi(sList.substr(0, pos).c_str());
+        sList = "";
+    }
 
     cout << "Checking search algorithm..." << "\n\n";
-
+    if (sSeAlgo == "linear") {
+        SortLinear(iListArray, iSearch);
+    }
     cout << "Checking sort algorithm" << "\n\n";
 }
 
