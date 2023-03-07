@@ -21,7 +21,7 @@
     <ClInclude Include="pch.h">
       <Filter>Headerdateien</Filter>
     </ClInclude>
-    <ClInclude Include="SCCplusplusSortLinear.h">
+    <ClInclude Include="SCCplusplusCommon.h">
       <Filter>Headerdateien</Filter>
     </ClInclude>
   </ItemGroup>
@@ -32,7 +32,7 @@
     <ClCompile Include="pch.cpp">
       <Filter>Quelldateien</Filter>
     </ClCompile>
-    <ClCompile Include="SCCplusplusSortLinear.cpp">
+    <ClCompile Include="SCCplusplusCommon.cpp">
       <Filter>Quelldateien</Filter>
     </ClCompile>
   </ItemGroup>

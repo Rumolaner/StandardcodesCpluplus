@@ -4,6 +4,7 @@
 
 #include <iostream>
 #include "../SCCplusplusSortLinear/SCCplusplusSortLinear.h"
+#include "../SCCplusplusCommon/SccplusplusCommon.h"
 
 using namespace std;
 
@@ -30,6 +31,7 @@ int main(int argc, char* argv[])
     }
 
     cout << "Search value: " << iSearch << '\n';
+    write("Search value: " + to_string(iSearch));
     cout << "List: " << sList << '\n';
     cout << "Search Algorithm: " << sSeAlgo << '\n';
     cout << "Sort Algorithm: " << sSoAlgo << "\n\n";
@@ -48,6 +50,7 @@ int main(int argc, char* argv[])
     }
 
     cout << "Checking sort algorithm" << "\n\n";
+    write("");
     if (sSoAlgo == "bubble") {
         //SortLinear(iListArray, iSearch);
     }

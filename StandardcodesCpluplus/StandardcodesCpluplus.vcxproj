@@ -130,8 +130,8 @@
     <ClCompile Include="StandardcodesCpluplus.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\SCCplusplusSortLinear\SCCplusplusSortLinear.vcxproj">
-      <Project>{735b2655-1a1a-41fd-9364-2ac803d7db93}</Project>
+    <ProjectReference Include="..\SCCplusplusCommon\SCCplusplusCommon.vcxproj">
+      <Project>{66927b8e-e1fe-4263-a6c9-83dccbf39007}</Project>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
