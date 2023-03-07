@@ -3,15 +3,17 @@
 //Standardparameterlist: 32 34,56,23,56,86,42,23,65,32,45,57,23,56,23,55,57,22 linear bubble
 
 #include <iostream>
-#include "../SCCplusplusSortLinear/SCCplusplusSortLinear.h"
+#include <chrono>
 #include "../SCCplusplusCommon/SccplusplusCommon.h"
 
 using namespace std;
 
 int main(int argc, char* argv[])
 {
+    chrono::high_resolution_clock::time_point starttime = chrono::high_resolution_clock::now();
+    clear(); //Clear Output-file output.txt in Application-root
     int iSearch = 0;
-    int iListArray[17];
+    int iListArray[17] = {};
     string sList = "";
     string sSeAlgo = "";
     string sSoAlgo = "";
@@ -31,10 +33,13 @@ int main(int argc, char* argv[])
     }
 
     cout << "Search value: " << iSearch << '\n';
-    write("Search value: " + to_string(iSearch));
+    write(starttime, "Search value: " + to_string(iSearch));
     cout << "List: " << sList << '\n';
+    write(starttime, "List: " + sList);
     cout << "Search Algorithm: " << sSeAlgo << '\n';
+    write(starttime, "Search Algorithm: " + sSeAlgo);
     cout << "Sort Algorithm: " << sSoAlgo << "\n\n";
+    write(starttime, "Sort Algorithm: " + sSoAlgo);
 
     cout << "Checking list..." << "\n\n";
     int i = 0;
@@ -50,27 +55,29 @@ int main(int argc, char* argv[])
     }
 
     cout << "Checking sort algorithm" << "\n\n";
-    write("");
     if (sSoAlgo == "bubble") {
         //SortLinear(iListArray, iSearch);
     }
     else if (sSoAlgo != ""){
         cout << "Unbekannter Sortieralgorithmus: " << sSoAlgo << '\n';
+        write(starttime, "Unbekannter Sortieralgorithmus: " + sSoAlgo);
         return 2;
     }
 
     cout << "Checking search algorithm..." << "\n\n";
     if (sSeAlgo == "linear") {
-        SortLinear(iListArray, iSearch);
+        //SortLinear(iListArray, iSearch);
     }
     else if (sSeAlgo == "binary") {
         if (sSoAlgo == "") {
             cout << "Binary Search benötigt eine sortierte Liste!\n";
+            write(starttime, "Binary Search benötigt eine sortierte Liste!");
         }
 
     }
     else {
         cout << "Unbekannter Suchgorithmus: " << sSeAlgo << '\n';
+        write(starttime, "Unbekannter Suchgorithmus: " + sSeAlgo);
         return 2;
     }
 }

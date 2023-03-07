@@ -2,4 +2,7 @@
 #pragma once
 
 #include <string>
-extern "C" __declspec(dllexport) bool write(std::string text);
+#include <fstream>
+#include <chrono>
+extern "C++" __declspec(dllexport) void clear();
+extern "C++" __declspec(dllexport) bool write(std::chrono::high_resolution_clock::time_point, std::string text);
