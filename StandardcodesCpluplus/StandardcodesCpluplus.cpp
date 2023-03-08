@@ -4,7 +4,9 @@
 
 #include <iostream>
 #include <chrono>
+#include <vector>
 #include "../SCCplusplusCommon/SccplusplusCommon.h"
+#include "../SCCplusplusSortBubble/SCCplusplusSortBubble.h"
 
 using namespace std;
 
@@ -13,7 +15,7 @@ int main(int argc, char* argv[])
     chrono::high_resolution_clock::time_point starttime = chrono::high_resolution_clock::now();
     clear(); //Clear Output-file output.txt in Application-root
     int iSearch = 0;
-    int iListArray[17] = {};
+    vector<int> iList = {};
     string sList = "";
     string sSeAlgo = "";
     string sSoAlgo = "";
@@ -45,18 +47,18 @@ int main(int argc, char* argv[])
     int i = 0;
     int pos;
     while ((pos = sList.find(',')) != std::string::npos) {
-        iListArray[i] = atoi(sList.substr(0, pos).c_str());
+        iList.push_back(atoi(sList.substr(0, pos).c_str()));
         sList.erase(0, pos + 1);
         i++;
     }
     if (sList.length() > 0) {
-        iListArray[i] = atoi(sList.substr(0, pos).c_str());
+        iList.push_back(atoi(sList.substr(0, pos).c_str()));
         sList = "";
     }
 
     cout << "Checking sort algorithm" << "\n\n";
     if (sSoAlgo == "bubble") {
-        //SortLinear(iListArray, iSearch);
+        SortBubble(starttime, iSearch, iList);
     }
     else if (sSoAlgo != ""){
         cout << "Unbekannter Sortieralgorithmus: " << sSoAlgo << '\n';
