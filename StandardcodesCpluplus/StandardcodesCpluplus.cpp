@@ -61,7 +61,7 @@ int main(int argc, char* argv[])
     else if (sSoAlgo != ""){
         cout << "Unbekannter Sortieralgorithmus: " << sSoAlgo << '\n';
         write(starttime, "Unbekannter Sortieralgorithmus: " + sSoAlgo);
-        return 2;//Fehler
+        return 2;
     }
 
     cout << "Checking search algorithm..." << "\n\n";
