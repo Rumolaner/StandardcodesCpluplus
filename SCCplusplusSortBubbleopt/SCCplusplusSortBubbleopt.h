@@ -1,4 +1,4 @@
-// SCCplusplusSortBubble.h - Standard Codes C++ optimized Bubble Sort implementation
+// SCCplusplusSortBubbleopt.h - Standard Codes C++ optimized Bubble Sort implementation
 #pragma once
 
 #include <string>

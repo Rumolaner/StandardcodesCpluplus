@@ -1,4 +1,4 @@
-// SCCplusplusSortBubble.h - Standard Codes C++ optimized Bubble Sort implementation
+// SCCplusplusSortBubbleopt.h - Standard Codes C++ optimized Bubble Sort implementation
 #include "pch.h" // use stdafx.h in Visual Studio 2017 and earlier
 #include "SCCplusplusSortBubbleopt.h"
 

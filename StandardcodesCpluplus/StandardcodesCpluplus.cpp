@@ -1,6 +1,6 @@
 // StandardcodesCpluplus.cpp : Diese Datei enthält die Funktion "main". Hier beginnt und endet die Ausführung des Programms.
 //
-//Standardparameterlist: 32 34,56,23,56,86,42,23,65,32,45,57,23,56,23,55,57,22 linear bubble
+//Standardparameterlist: 32 34,56,22,56,86,42,23,65,32,45,57,23,56,23,55,57,23 linear bubble
 
 #include <iostream>
 #include <chrono>
@@ -8,6 +8,7 @@
 #include "../SCCplusplusCommon/SccplusplusCommon.h"
 #include "../SCCplusplusSortBubble/SCCplusplusSortBubble.h"
 #include "../SCCplusplusSortBubbleopt/SCCplusplusSortBubbleopt.h"
+#include "../SCCplusplusSortInsert/SCCplusplusSortInsert.h"
 
 using namespace std;
 
@@ -63,6 +64,9 @@ int main(int argc, char* argv[])
     }
     else if (sSoAlgo == "bubbleopt") {
         SortBubbleopt(starttime, iSearch, iList);
+    }
+    else if (sSoAlgo == "insert") {
+        SortInsert(starttime, iSearch, iList);
     }
     else if (sSoAlgo != ""){
         cout << "Unbekannter Sortieralgorithmus: " << sSoAlgo << '\n';
