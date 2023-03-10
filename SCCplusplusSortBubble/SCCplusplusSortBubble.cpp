@@ -20,12 +20,12 @@ bool SortBubble(chrono::high_resolution_clock::time_point starttime, int iSearch
 			}
 		}
 
-		write(starttime, "Next iteration");
+		write(starttime, "Next outer iteration");
 	}
 	write(starttime, "End Bubble Sort");
 	write(starttime, "Iterations: " + to_string(iIterations));
 	write(starttime, "Swaps: " + to_string(iSwaps));
-	write(starttime, "Neu order:");
+	write(starttime, "New order:");
 	for (int i = 0; i < iList.size(); i++){
 		write(starttime, to_string(iList[i]));
 	}

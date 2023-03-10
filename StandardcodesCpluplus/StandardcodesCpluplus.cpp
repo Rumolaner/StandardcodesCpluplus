@@ -7,6 +7,7 @@
 #include <vector>
 #include "../SCCplusplusCommon/SccplusplusCommon.h"
 #include "../SCCplusplusSortBubble/SCCplusplusSortBubble.h"
+#include "../SCCplusplusSortBubbleopt/SCCplusplusSortBubbleopt.h"
 
 using namespace std;
 
@@ -59,6 +60,9 @@ int main(int argc, char* argv[])
     cout << "Checking sort algorithm" << "\n\n";
     if (sSoAlgo == "bubble") {
         SortBubble(starttime, iSearch, iList);
+    }
+    else if (sSoAlgo == "bubbleopt") {
+        SortBubbleopt(starttime, iSearch, iList);
     }
     else if (sSoAlgo != ""){
         cout << "Unbekannter Sortieralgorithmus: " << sSoAlgo << '\n';
