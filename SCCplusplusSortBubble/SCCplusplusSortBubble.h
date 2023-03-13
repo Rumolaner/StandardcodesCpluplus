@@ -8,4 +8,4 @@
 
 using namespace std;
 
-extern "C++" __declspec(dllexport) bool SortBubble(chrono::high_resolution_clock::time_point, int, vector<int>);
+extern "C++" __declspec(dllexport) vector<int> SortBubble(chrono::high_resolution_clock::time_point, vector<int>);

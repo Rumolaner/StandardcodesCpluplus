@@ -61,16 +61,16 @@ int main(int argc, char* argv[])
 
     cout << "Checking sort algorithm" << "\n\n";
     if (sSoAlgo == "bubble") {
-        SortBubble(starttime, iSearch, iList);
+        iList = SortBubble(starttime, iList);
     }
     else if (sSoAlgo == "bubbleopt") {
-        SortBubbleopt(starttime, iSearch, iList);
+        iList = SortBubbleopt(starttime, iList);
     }
     else if (sSoAlgo == "insert") {
-        SortInsert(starttime, iSearch, iList);
+        iList = SortInsert(starttime, iList);
     }
     else if (sSoAlgo == "merge") {
-        SortMerge(starttime, iSearch, iList);
+        iList = SortMerge(starttime, iList);
     }
     else if (sSoAlgo != ""){
         cout << "Unbekannter Sortieralgorithmus: " << sSoAlgo << '\n';

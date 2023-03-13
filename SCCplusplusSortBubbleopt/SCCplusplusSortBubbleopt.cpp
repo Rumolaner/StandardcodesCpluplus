@@ -2,7 +2,7 @@
 #include "pch.h" // use stdafx.h in Visual Studio 2017 and earlier
 #include "SCCplusplusSortBubbleopt.h"
 
-bool SortBubbleopt(chrono::high_resolution_clock::time_point starttime, int iSearch, vector<int> iList) {
+vector<int> SortBubbleopt(chrono::high_resolution_clock::time_point starttime, vector<int> iList) {
 	int iSwaps = 0;
 	int iIterations = 0;
 	bool swapped = false;
@@ -35,5 +35,5 @@ bool SortBubbleopt(chrono::high_resolution_clock::time_point starttime, int iSea
 	for (int i = 0; i < iList.size(); i++) {
 		write(starttime, to_string(iList[i]));
 	}
-	return true;
+	return iList;
 }

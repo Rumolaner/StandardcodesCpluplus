@@ -8,4 +8,4 @@
 
 using namespace std;
 
-extern "C++" __declspec(dllexport) bool SortInsert(chrono::high_resolution_clock::time_point, int, vector<int>);
+extern "C++" __declspec(dllexport) vector<int> SortInsert(chrono::high_resolution_clock::time_point, vector<int>);

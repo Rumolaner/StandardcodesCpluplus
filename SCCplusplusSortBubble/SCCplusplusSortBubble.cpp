@@ -2,7 +2,7 @@
 #include "pch.h" // use stdafx.h in Visual Studio 2017 and earlier
 #include "SCCplusplusSortBubble.h"
 
-bool SortBubble(chrono::high_resolution_clock::time_point starttime, int iSearch, vector<int> iList) {
+vector<int> SortBubble(chrono::high_resolution_clock::time_point starttime, vector<int> iList) {
 	int iSwaps = 0;
 	int iIterations = 0;
 
@@ -29,5 +29,5 @@ bool SortBubble(chrono::high_resolution_clock::time_point starttime, int iSearch
 	for (int i = 0; i < iList.size(); i++){
 		write(starttime, to_string(iList[i]));
 	}
-	return true;
+	return iList;
 }
