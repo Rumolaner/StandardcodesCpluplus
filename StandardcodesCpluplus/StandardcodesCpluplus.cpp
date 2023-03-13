@@ -11,6 +11,7 @@
 #include "../SCCplusplusSortInsert/SCCplusplusSortInsert.h"
 #include "../SCCplusplusSortMerge/SCCplusplusSortMerge.h"
 #include "../SCCplusplusSortTree/SCCplusplusSortTree.h"
+#include "../SCCplusplusSortHeap/SCCplusplusSortHeap.h"
 
 using namespace std;
 
@@ -75,6 +76,9 @@ int main(int argc, char* argv[])
     }
     else if (sSoAlgo == "tree") {
         iList = SortTree(starttime, iList);
+    }
+    else if (sSoAlgo == "heap") {
+        iList = SortHeap(starttime, iList);
     }
     else if (sSoAlgo != ""){
         cout << "Unbekannter Sortieralgorithmus: " << sSoAlgo << '\n';
