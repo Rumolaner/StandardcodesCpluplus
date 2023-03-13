@@ -10,6 +10,7 @@
 #include "../SCCplusplusSortBubbleopt/SCCplusplusSortBubbleopt.h"
 #include "../SCCplusplusSortInsert/SCCplusplusSortInsert.h"
 #include "../SCCplusplusSortMerge/SCCplusplusSortMerge.h"
+#include "../SCCplusplusSortTree/SCCplusplusSortTree.h"
 
 using namespace std;
 
@@ -71,6 +72,9 @@ int main(int argc, char* argv[])
     }
     else if (sSoAlgo == "merge") {
         iList = SortMerge(starttime, iList);
+    }
+    else if (sSoAlgo == "tree") {
+        iList = SortTree(starttime, iList);
     }
     else if (sSoAlgo != ""){
         cout << "Unbekannter Sortieralgorithmus: " << sSoAlgo << '\n';

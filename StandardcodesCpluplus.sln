@@ -15,6 +15,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "SCCplusplusSortInsert", "SC
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "SCCplusplusSortMerge", "SCCplusplusSortMerge\SCCplusplusSortMerge.vcxproj", "{E6F8876D-E2B6-430B-B95C-71864BB3DEF2}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "SCCplusplusSortTree", "SCCplusplusSortTree\SCCplusplusSortTree.vcxproj", "{9A6B4C6A-EF80-4383-8BE1-36DE08D1BC39}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -71,6 +73,14 @@ Global
 		{E6F8876D-E2B6-430B-B95C-71864BB3DEF2}.Release|x64.Build.0 = Release|x64
 		{E6F8876D-E2B6-430B-B95C-71864BB3DEF2}.Release|x86.ActiveCfg = Release|Win32
 		{E6F8876D-E2B6-430B-B95C-71864BB3DEF2}.Release|x86.Build.0 = Release|Win32
+		{9A6B4C6A-EF80-4383-8BE1-36DE08D1BC39}.Debug|x64.ActiveCfg = Debug|x64
+		{9A6B4C6A-EF80-4383-8BE1-36DE08D1BC39}.Debug|x64.Build.0 = Debug|x64
+		{9A6B4C6A-EF80-4383-8BE1-36DE08D1BC39}.Debug|x86.ActiveCfg = Debug|Win32
+		{9A6B4C6A-EF80-4383-8BE1-36DE08D1BC39}.Debug|x86.Build.0 = Debug|Win32
+		{9A6B4C6A-EF80-4383-8BE1-36DE08D1BC39}.Release|x64.ActiveCfg = Release|x64
+		{9A6B4C6A-EF80-4383-8BE1-36DE08D1BC39}.Release|x64.Build.0 = Release|x64
+		{9A6B4C6A-EF80-4383-8BE1-36DE08D1BC39}.Release|x86.ActiveCfg = Release|Win32
+		{9A6B4C6A-EF80-4383-8BE1-36DE08D1BC39}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
