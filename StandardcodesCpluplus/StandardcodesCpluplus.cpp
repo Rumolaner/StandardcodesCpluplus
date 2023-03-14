@@ -15,6 +15,7 @@
 #include "../SCCplusplusSortSelection/SCCplusplusSortSelection.h"
 #include "../SCCplusplusSortQuick/SCCplusplusSortQuick.h"
 #include "../SCCplusplusSearchLinear/SCCplusplusSearchLinear.h"
+#include "../SCCplusplusSearchBinary/SCCplusplusSearchBinary.h"
 
 using namespace std;
 
@@ -104,6 +105,9 @@ int main(int argc, char* argv[])
         if (sSoAlgo == "") {
             cout << "Binary Search benötigt eine sortierte Liste!\n";
             write(starttime, "Binary Search benötigt eine sortierte Liste!");
+        }
+        else {
+            SearchBinary(starttime, iList, iSearch);
         }
 
     }
