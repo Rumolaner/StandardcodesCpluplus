@@ -14,6 +14,7 @@
 #include "../SCCplusplusSortHeap/SCCplusplusSortHeap.h"
 #include "../SCCplusplusSortSelection/SCCplusplusSortSelection.h"
 #include "../SCCplusplusSortQuick/SCCplusplusSortQuick.h"
+#include "../SCCplusplusSearchLinear/SCCplusplusSearchLinear.h"
 
 using namespace std;
 
@@ -97,7 +98,7 @@ int main(int argc, char* argv[])
 
     cout << "Checking search algorithm..." << "\n\n";
     if (sSeAlgo == "linear") {
-        //SortLinear(iListArray, iSearch);
+        SearchLinear(starttime, iList, iSearch);
     }
     else if (sSeAlgo == "binary") {
         if (sSoAlgo == "") {
