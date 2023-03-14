@@ -13,6 +13,7 @@
 #include "../SCCplusplusSortTree/SCCplusplusSortTree.h"
 #include "../SCCplusplusSortHeap/SCCplusplusSortHeap.h"
 #include "../SCCplusplusSortSelection/SCCplusplusSortSelection.h"
+#include "../SCCplusplusSortQuick/SCCplusplusSortQuick.h"
 
 using namespace std;
 
@@ -83,6 +84,10 @@ int main(int argc, char* argv[])
     }
     else if (sSoAlgo == "select") {
         iList = SortSelection(starttime, iList);
+    }
+    else if (sSoAlgo == "quick") {
+        vector<int>* iTemp = SortQuick(starttime, &iList, 0, iList.size()-1);
+        iList = *iTemp;
     }
     else if (sSoAlgo != ""){
         cout << "Unbekannter Sortieralgorithmus: " << sSoAlgo << '\n';
