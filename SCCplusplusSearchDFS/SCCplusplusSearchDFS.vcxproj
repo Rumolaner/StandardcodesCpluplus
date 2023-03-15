@@ -21,32 +21,32 @@
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
     <Keyword>Win32Proj</Keyword>
-    <ProjectGuid>{d6aca6f8-d29b-492c-a8f0-11ad396d8841}</ProjectGuid>
-    <RootNamespace>StandardcodesCpluplus</RootNamespace>
+    <ProjectGuid>{316b9f15-dc81-4e04-9cda-298f325e123e}</ProjectGuid>
+    <RootNamespace>SCCplusplusSearchDFS</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
-    <ConfigurationType>Application</ConfigurationType>
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
     <PlatformToolset>v143</PlatformToolset>
     <CharacterSet>Unicode</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
-    <ConfigurationType>Application</ConfigurationType>
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
     <UseDebugLibraries>false</UseDebugLibraries>
     <PlatformToolset>v143</PlatformToolset>
     <WholeProgramOptimization>true</WholeProgramOptimization>
     <CharacterSet>Unicode</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
-    <ConfigurationType>Application</ConfigurationType>
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
     <PlatformToolset>v143</PlatformToolset>
     <CharacterSet>Unicode</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
-    <ConfigurationType>Application</ConfigurationType>
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
     <UseDebugLibraries>false</UseDebugLibraries>
     <PlatformToolset>v143</PlatformToolset>
     <WholeProgramOptimization>true</WholeProgramOptimization>
@@ -74,12 +74,15 @@
     <ClCompile>
       <WarningLevel>Level3</WarningLevel>
       <SDLCheck>true</SDLCheck>
-      <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>WIN32;_DEBUG;SCCPLUSPLUSSEARCHDFS_EXPORTS;_WINDOWS;_USRDLL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
     </ClCompile>
     <Link>
-      <SubSystem>Console</SubSystem>
+      <SubSystem>Windows</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableUAC>false</EnableUAC>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
@@ -88,26 +91,32 @@
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <SDLCheck>true</SDLCheck>
-      <PreprocessorDefinitions>WIN32;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>WIN32;NDEBUG;SCCPLUSPLUSSEARCHDFS_EXPORTS;_WINDOWS;_USRDLL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
     </ClCompile>
     <Link>
-      <SubSystem>Console</SubSystem>
+      <SubSystem>Windows</SubSystem>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
       <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableUAC>false</EnableUAC>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <ClCompile>
       <WarningLevel>Level3</WarningLevel>
       <SDLCheck>true</SDLCheck>
-      <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>_DEBUG;SCCPLUSPLUSSEARCHDFS_EXPORTS;_WINDOWS;_USRDLL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
     </ClCompile>
     <Link>
-      <SubSystem>Console</SubSystem>
+      <SubSystem>Windows</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableUAC>false</EnableUAC>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
@@ -116,61 +125,37 @@
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <SDLCheck>true</SDLCheck>
-      <PreprocessorDefinitions>NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>NDEBUG;SCCPLUSPLUSSEARCHDFS_EXPORTS;_WINDOWS;_USRDLL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
     </ClCompile>
     <Link>
-      <SubSystem>Console</SubSystem>
+      <SubSystem>Windows</SubSystem>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
       <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableUAC>false</EnableUAC>
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="StandardcodesCpluplus.cpp" />
+    <ClInclude Include="framework.h" />
+    <ClInclude Include="pch.h" />
+    <ClInclude Include="SCCplusplusSearchDFS.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="dllmain.cpp" />
+    <ClCompile Include="pch.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Create</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="SCCplusplusSearchDFS.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\SCCplusplusCommon\SCCplusplusCommon.vcxproj">
       <Project>{66927b8e-e1fe-4263-a6c9-83dccbf39007}</Project>
-    </ProjectReference>
-    <ProjectReference Include="..\SCCplusplusSearchBFS\SCCplusplusSearchBFS.vcxproj">
-      <Project>{e11d8c5d-769c-45e2-b59a-05cdc91b82fe}</Project>
-    </ProjectReference>
-    <ProjectReference Include="..\SCCplusplusSearchBinary\SCCplusplusSearchBinary.vcxproj">
-      <Project>{d86b7f21-318c-47d2-a2ce-bfd30d7db3a6}</Project>
-    </ProjectReference>
-    <ProjectReference Include="..\SCCplusplusSearchDFS\SCCplusplusSearchDFS.vcxproj">
-      <Project>{316b9f15-dc81-4e04-9cda-298f325e123e}</Project>
-    </ProjectReference>
-    <ProjectReference Include="..\SCCplusplusSearchInterpolation\SCCplusplusSearchInterpolation.vcxproj">
-      <Project>{c9e66ed8-9538-4c6f-93c2-776c4e60d98f}</Project>
-    </ProjectReference>
-    <ProjectReference Include="..\SCCplusplusSearchLinear\SCCplusplusSearchLinear.vcxproj">
-      <Project>{7a23581c-afed-46cf-9ff6-eab6bdad378c}</Project>
-    </ProjectReference>
-    <ProjectReference Include="..\SCCplusplusSortBubbleopt\SCCplusplusSortBubbleopt.vcxproj">
-      <Project>{d441c4cf-911e-4e16-a4da-8c4aaaa76b8b}</Project>
-    </ProjectReference>
-    <ProjectReference Include="..\SCCplusplusSortBubble\SCCplusplusSortBubble.vcxproj">
-      <Project>{f846ed3e-869e-4962-9723-2221a9a9c709}</Project>
-    </ProjectReference>
-    <ProjectReference Include="..\SCCplusplusSortHeap\SCCplusplusSortHeap.vcxproj">
-      <Project>{0e355c76-a654-4138-a01a-1943b86db3ed}</Project>
-    </ProjectReference>
-    <ProjectReference Include="..\SCCplusplusSortInsert\SCCplusplusSortInsert.vcxproj">
-      <Project>{44d6b5a3-4828-4f79-ae68-ba9ee85e7fbd}</Project>
-    </ProjectReference>
-    <ProjectReference Include="..\SCCplusplusSortMerge\SCCplusplusSortMerge.vcxproj">
-      <Project>{e6f8876d-e2b6-430b-b95c-71864bb3def2}</Project>
-    </ProjectReference>
-    <ProjectReference Include="..\SCCplusplusSortQuick\SCCplusplusSortQuick.vcxproj">
-      <Project>{5c858b5f-38e6-44c2-9a8d-8127576001be}</Project>
-    </ProjectReference>
-    <ProjectReference Include="..\SCCplusplusSortSelection\SCCplusplusSortSelection.vcxproj">
-      <Project>{a2ffe867-093e-4774-abef-ab384fa7c8df}</Project>
-    </ProjectReference>
-    <ProjectReference Include="..\SCCplusplusSortTree\SCCplusplusSortTree.vcxproj">
-      <Project>{9a6b4c6a-ef80-4383-8be1-36de08d1bc39}</Project>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

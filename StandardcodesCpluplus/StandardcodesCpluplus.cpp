@@ -17,6 +17,8 @@
 #include "../SCCplusplusSearchLinear/SCCplusplusSearchLinear.h"
 #include "../SCCplusplusSearchBinary/SCCplusplusSearchBinary.h"
 #include "../SCCplusplusSearchInterpolation/SCCplusplusSearchInterpolation.h"
+#include "../SCCplusplusSearchBFS/SCCplusplusSearchBFS.h"
+#include "../SCCplusplusSearchDFS/SCCplusplusSearchDFS.h"
 
 using namespace std;
 
@@ -119,6 +121,12 @@ int main(int argc, char* argv[])
         else {
             SearchInterpolation(starttime, iList, iSearch);
         }
+    }
+    else if (sSeAlgo == "bfs") {
+        SearchBFS(starttime, iList, iSearch);
+    }
+    else if (sSeAlgo == "dfs") {
+        SearchDFS(starttime, iList, iSearch);
     }
     else {
         cout << "Unbekannter Suchgorithmus: " << sSeAlgo << '\n';
