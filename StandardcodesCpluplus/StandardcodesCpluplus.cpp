@@ -16,6 +16,7 @@
 #include "../SCCplusplusSortQuick/SCCplusplusSortQuick.h"
 #include "../SCCplusplusSearchLinear/SCCplusplusSearchLinear.h"
 #include "../SCCplusplusSearchBinary/SCCplusplusSearchBinary.h"
+#include "../SCCplusplusSearchInterpolation/SCCplusplusSearchInterpolation.h"
 
 using namespace std;
 
@@ -109,7 +110,15 @@ int main(int argc, char* argv[])
         else {
             SearchBinary(starttime, iList, iSearch);
         }
-
+    }
+    else if (sSeAlgo == "interpol") {
+        if (sSoAlgo == "") {
+            cout << "Interpolation Search benötigt eine sortierte Liste!\n";
+            write(starttime, "Interpolation Search benötigt eine sortierte Liste!");
+        }
+        else {
+            SearchInterpolation(starttime, iList, iSearch);
+        }
     }
     else {
         cout << "Unbekannter Suchgorithmus: " << sSeAlgo << '\n';
