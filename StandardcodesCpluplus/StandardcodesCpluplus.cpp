@@ -124,7 +124,7 @@ int main(int argc, char* argv[])
     }
     else if (sSeAlgo == "bfs" || sSeAlgo == "dfs") {
         //Datenbaum erstellen
-
+        SNode node = SNode(starttime, iList.at(0));
 
         if (sSeAlgo == "bfs") {
             SCCplusplusSearchBFS(starttime, iList, iSearch);

@@ -28,6 +28,8 @@ bool write(chrono::high_resolution_clock::time_point starttime, string text) {
 	}
 }
 
-fsNode::fsNode(int value) {
+SNode::SNode(chrono::high_resolution_clock::time_point starttime, int value) {
+	write(this->starttime, "Create new Node, Value: " + to_string(value));
+	this->starttime = starttime;
 	this->value = value;
 }

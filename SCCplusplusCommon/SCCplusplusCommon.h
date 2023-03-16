@@ -5,11 +5,15 @@
 #include <fstream>
 #include <chrono>
 
-class fsNode {
+class __declspec(dllexport) SNode {
+private:
+	std::chrono::high_resolution_clock::time_point starttime;
 	int value;
-	fsNode *links, *rechts;
+	SNode* left = NULL;
+	SNode* right = NULL;
 
-	fsNode(int);
+public:
+	SNode(std::chrono::high_resolution_clock::time_point, int);
 };
 
 extern "C++" __declspec(dllexport) void clear();
