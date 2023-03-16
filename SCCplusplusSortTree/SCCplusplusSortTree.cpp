@@ -46,7 +46,7 @@ vector<int> TreeNode::traverse() {
 	return iList;
 }
 
-vector<int> SortTree(chrono::high_resolution_clock::time_point starttime, vector<int> iList) {
+vector<int> SCCplusplusSortTree(chrono::high_resolution_clock::time_point starttime, vector<int> iList) {
 	write(starttime, "Start Binary Tree Sort");
 	TreeNode node = TreeNode(starttime, iList[0]);
 	for (int i = 1; i < iList.size(); i++) {

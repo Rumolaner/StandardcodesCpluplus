@@ -8,4 +8,4 @@
 
 using namespace std;
 
-extern "C++" __declspec(dllexport) int SearchBFS(chrono::high_resolution_clock::time_point, vector<int>, int iSearch);
+extern "C++" __declspec(dllexport) int SCCplusplusSearchBFS(chrono::high_resolution_clock::time_point, vector<int>, int iSearch);

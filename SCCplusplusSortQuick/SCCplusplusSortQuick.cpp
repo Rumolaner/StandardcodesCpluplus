@@ -40,13 +40,13 @@ int Teile(chrono::high_resolution_clock::time_point starttime, vector<int>* iLis
 	return i;
 }
 
-vector<int>* SortQuick(chrono::high_resolution_clock::time_point starttime, vector<int> *iList, int iStart, int iEnd) {
+vector<int>* SCCplusplusSortQuick(chrono::high_resolution_clock::time_point starttime, vector<int> *iList, int iStart, int iEnd) {
 	write(starttime, "Start Quick Sort");
 
 	if (iStart < iEnd) {
 		int iTeiler = Teile(starttime, iList, iStart, iEnd);
-		iList = SortQuick(starttime, iList, iStart, iTeiler-1);
-		iList = SortQuick(starttime, iList, iTeiler, iEnd);
+		iList = SCCplusplusSortQuick(starttime, iList, iStart, iTeiler-1);
+		iList = SCCplusplusSortQuick(starttime, iList, iTeiler, iEnd);
 	}
 
 	write(starttime, "End Quick Sort");

@@ -8,4 +8,4 @@
 
 using namespace std;
 
-extern "C++" __declspec(dllexport) vector<int> SortHeap(chrono::high_resolution_clock::time_point, vector<int>);
+extern "C++" __declspec(dllexport) vector<int> SCCplusplusSortHeap(chrono::high_resolution_clock::time_point, vector<int>);

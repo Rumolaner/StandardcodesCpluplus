@@ -29,7 +29,7 @@ vector<int> Heapify(chrono::high_resolution_clock::time_point starttime, vector<
 	return iList;
 }
 
-vector<int> SortHeap(chrono::high_resolution_clock::time_point starttime, vector<int> iList) {
+vector<int> SCCplusplusSortHeap(chrono::high_resolution_clock::time_point starttime, vector<int> iList) {
 	write(starttime, "Start Heap Sort");
 
 	write(starttime, "Initiate Heap");

@@ -2,7 +2,7 @@
 #include "pch.h" // use stdafx.h in Visual Studio 2017 and earlier
 #include "SCCplusplusSortSelection.h"
 
-vector<int> SortSelection(chrono::high_resolution_clock::time_point starttime, vector<int> iList) {
+vector<int> SCCplusplusSortSelection(chrono::high_resolution_clock::time_point starttime, vector<int> iList) {
 	write(starttime, "Start Selection Sort");
 
 	for (int i = 0; i < iList.size() -2; i++) {

@@ -21,4 +21,4 @@ public:
 	vector<int> traverse();
 };
 
-extern "C++" __declspec(dllexport) vector<int> SortTree(chrono::high_resolution_clock::time_point, vector<int>);
+extern "C++" __declspec(dllexport) vector<int> SCCplusplusSortTree(chrono::high_resolution_clock::time_point, vector<int>);

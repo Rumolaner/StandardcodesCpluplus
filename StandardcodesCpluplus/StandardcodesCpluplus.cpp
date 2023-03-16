@@ -70,28 +70,28 @@ int main(int argc, char* argv[])
 
     cout << "Checking sort algorithm" << "\n\n";
     if (sSoAlgo == "bubble") {
-        iList = SortBubble(starttime, iList);
+        iList = SCCplusplusSortBubble(starttime, iList);
     }
     else if (sSoAlgo == "bubbleopt") {
-        iList = SortBubbleopt(starttime, iList);
+        iList = SCCplusplusSortBubbleopt(starttime, iList);
     }
     else if (sSoAlgo == "insert") {
-        iList = SortInsert(starttime, iList);
+        iList = SCCplusplusSortInsert(starttime, iList);
     }
     else if (sSoAlgo == "merge") {
-        iList = SortMerge(starttime, iList);
+        iList = SCCplusplusSortMerge(starttime, iList);
     }
     else if (sSoAlgo == "tree") {
-        iList = SortTree(starttime, iList);
+        iList = SCCplusplusSortTree(starttime, iList);
     }
     else if (sSoAlgo == "heap") {
-        iList = SortHeap(starttime, iList);
+        iList = SCCplusplusSortHeap(starttime, iList);
     }
     else if (sSoAlgo == "select") {
-        iList = SortSelection(starttime, iList);
+        iList = SCCplusplusSortSelection(starttime, iList);
     }
     else if (sSoAlgo == "quick") {
-        vector<int>* iTemp = SortQuick(starttime, &iList, 0, iList.size()-1);
+        vector<int>* iTemp = SCCplusplusSortQuick(starttime, &iList, 0, iList.size()-1);
         iList = *iTemp;
     }
     else if (sSoAlgo != ""){
@@ -102,7 +102,7 @@ int main(int argc, char* argv[])
 
     cout << "Checking search algorithm..." << "\n\n";
     if (sSeAlgo == "linear") {
-        SearchLinear(starttime, iList, iSearch);
+        SCCplusplusSearchLinear(starttime, iList, iSearch);
     }
     else if (sSeAlgo == "binary") {
         if (sSoAlgo == "") {
@@ -110,7 +110,7 @@ int main(int argc, char* argv[])
             write(starttime, "Binary Search benötigt eine sortierte Liste!");
         }
         else {
-            SearchBinary(starttime, iList, iSearch);
+            SCCplusplusSearchBinary(starttime, iList, iSearch);
         }
     }
     else if (sSeAlgo == "interpol") {
@@ -119,14 +119,19 @@ int main(int argc, char* argv[])
             write(starttime, "Interpolation Search benötigt eine sortierte Liste!");
         }
         else {
-            SearchInterpolation(starttime, iList, iSearch);
+            SCCplusplusSearchInterpolation(starttime, iList, iSearch);
         }
     }
-    else if (sSeAlgo == "bfs") {
-        SearchBFS(starttime, iList, iSearch);
-    }
-    else if (sSeAlgo == "dfs") {
-        SearchDFS(starttime, iList, iSearch);
+    else if (sSeAlgo == "bfs" || sSeAlgo == "dfs") {
+        //Datenbaum erstellen
+
+
+        if (sSeAlgo == "bfs") {
+            SCCplusplusSearchBFS(starttime, iList, iSearch);
+        }
+        else if (sSeAlgo == "dfs") {
+            SCCplusplusSearchDFS(starttime, iList, iSearch);
+        }
     }
     else {
         cout << "Unbekannter Suchgorithmus: " << sSeAlgo << '\n';

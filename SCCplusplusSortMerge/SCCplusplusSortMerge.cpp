@@ -2,7 +2,7 @@
 #include "pch.h" // use stdafx.h in Visual Studio 2017 and earlier
 #include "SCCplusplusSortMerge.h"
 
-vector<int> SortMerge(chrono::high_resolution_clock::time_point starttime, vector<int> iList) {
+vector<int> SCCplusplusSortMerge(chrono::high_resolution_clock::time_point starttime, vector<int> iList) {
 	write(starttime, "New function call - Start Merge Sort");
 	write(starttime, "Given List:");
 	for (int i = 0; i < iList.size(); i++) {
@@ -22,8 +22,8 @@ vector<int> SortMerge(chrono::high_resolution_clock::time_point starttime, vecto
 			iRList.push_back(iList[i]);
 	}
 
-	iLList = SortMerge(starttime, iLList);
-	iRList = SortMerge(starttime, iRList);
+	iLList = SCCplusplusSortMerge(starttime, iLList);
+	iRList = SCCplusplusSortMerge(starttime, iRList);
 
 	while (iLList.size() > 0 && iRList.size() > 0) {
 		if (iLList[0] > iRList[0]) {

@@ -2,7 +2,7 @@
 #include "pch.h" // use stdafx.h in Visual Studio 2017 and earlier
 #include "SCCplusplusSearchLinear.h"
 
-int SearchLinear(chrono::high_resolution_clock::time_point starttime, vector<int> iList, int iSearch) {
+int SCCplusplusSearchLinear(chrono::high_resolution_clock::time_point starttime, vector<int> iList, int iSearch) {
 	int found = NULL;
 	write(starttime, "Start Linear Search");
 	write(starttime, "Searching for " + to_string(iSearch));

@@ -27,3 +27,7 @@ bool write(chrono::high_resolution_clock::time_point starttime, string text) {
 		return true;
 	}
 }
+
+fsNode::fsNode(int value) {
+	this->value = value;
+}
