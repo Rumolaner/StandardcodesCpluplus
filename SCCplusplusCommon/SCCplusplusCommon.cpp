@@ -33,3 +33,28 @@ SNode::SNode(chrono::high_resolution_clock::time_point starttime, int value) {
 	this->starttime = starttime;
 	this->value = value;
 }
+
+void SNode::AddNeighbor(SNode* neighbor) {
+	this->neighbors.push_back(neighbor);
+	neighbor->AddNeighborBack(this);
+}
+
+void SNode::AddNeighborBack(SNode* neighbor) {
+	this->neighbors.push_back(neighbor);
+}
+
+std::vector<SNode*> SNode::GetNeighbors() {
+	return this->neighbors;
+}
+
+void SNode::Visited() {
+	this->visited = true;
+}
+
+bool SNode::IsVisited() {
+	return this->visited;
+}
+
+int SNode::Value() {
+	return this->value;
+}

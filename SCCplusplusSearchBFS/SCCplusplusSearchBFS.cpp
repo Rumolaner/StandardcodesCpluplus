@@ -2,38 +2,40 @@
 #include "pch.h" // use stdafx.h in Visual Studio 2017 and earlier
 #include "SCCplusplusSearchBFS.h"
 
-int SCCplusplusSearchBFS(chrono::high_resolution_clock::time_point starttime, vector<int> iList, int iSearch) {
-	int found = NULL;
-	write(starttime, "Start Interpolation Search");
+SNode* SCCplusplusSearchBFS(chrono::high_resolution_clock::time_point starttime, SNode* stNode, int iSearch) {
+	write(starttime, "Start Breadt-First Search");
 	write(starttime, "Searching for " + to_string(iSearch));
+	
+	SNode* found = NULL;
+	vector<SNode*> toVisit;
+	toVisit.push_back(stNode);
+	stNode->Visited();
 
-/*	write(starttime, "Init Start and End");
-	int iStart = 0;
-	int iEnd = iList.size() - 1;
-
-	while (iStart < iEnd && iList[iStart] < iSearch && iList[iEnd] > iSearch) {
-		int iCheck = iStart + (iEnd - iStart) * (iSearch - iList[iStart]) / (iList[iEnd] - iList[iStart]);
-		write(starttime, "Check Index/Value: " + to_string(iCheck) + "/" + to_string(iList[iCheck]));
-
-		if (iList[iCheck] == iSearch) {
-			found = iCheck;
+	while (toVisit.size() > 0) {
+		SNode* node = toVisit[0];
+		toVisit.erase(toVisit.begin());
+		write(starttime, "Next iteration: " + to_string(node->Value()));
+		node->Visited();
+		if (node->Value() == iSearch) {
+			found = node;
 			break;
 		}
 
-		if (iList[iCheck] < iSearch) {
-			iStart = iCheck;
-		}
 
-		if (iList[iCheck] > iSearch) {
-			iEnd = iCheck;
+
+		for (int i = 0; i < node->GetNeighbors().size(); i++) {
+			if (!node->GetNeighbors()[i]->IsVisited()) {
+				write(starttime, "Node not visited, push to list");
+				toVisit.push_back(node->GetNeighbors()[i]);
+			}
 		}
-	}*/
+	}
 
 	write(starttime, "End Breadt-First Search");
 	if (found == NULL)
 		write(starttime, "Element " + to_string(iSearch) + " not found");
 	else
-		write(starttime, "Element " + to_string(iSearch) + " found at index " + to_string(found));
+		write(starttime, "Element " + to_string(iSearch) + " found at node " + to_string(found->Value()));
 
-	return found;
+	return NULL;
 }

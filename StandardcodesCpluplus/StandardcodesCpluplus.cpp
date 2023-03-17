@@ -124,13 +124,36 @@ int main(int argc, char* argv[])
     }
     else if (sSeAlgo == "bfs" || sSeAlgo == "dfs") {
         //Datenbaum erstellen
-        SNode node = SNode(starttime, iList.at(0));
+        write(starttime, "Erstelle Beispielbaum für BFS und DFS");
+        SNode node1 = SNode(starttime, iList.at(0));
+        SNode node2 = SNode(starttime, iList.at(1));
+        SNode node3 = SNode(starttime, iList.at(2));
+        SNode node4 = SNode(starttime, iList.at(3));
+        SNode node5 = SNode(starttime, iList.at(4));
+        SNode node6 = SNode(starttime, iList.at(5));
+        SNode node7 = SNode(starttime, iList.at(6));
+        SNode node8 = SNode(starttime, iList.at(7));
+        SNode node9 = SNode(starttime, iList.at(8));
+        SNode node10 = SNode(starttime, iList.at(9));
+
+        node1.AddNeighbor(&node2);
+        node1.AddNeighbor(&node3);
+        node2.AddNeighbor(&node4);
+        node2.AddNeighbor(&node5);
+        node3.AddNeighbor(&node4);
+        node4.AddNeighbor(&node5);
+        node5.AddNeighbor(&node6);
+        node5.AddNeighbor(&node7);
+        node7.AddNeighbor(&node8);
+        node7.AddNeighbor(&node9);
+        node7.AddNeighbor(&node10);
+        node8.AddNeighbor(&node10);
 
         if (sSeAlgo == "bfs") {
-            SCCplusplusSearchBFS(starttime, iList, iSearch);
+            SCCplusplusSearchBFS(starttime, &node1, iSearch);
         }
         else if (sSeAlgo == "dfs") {
-            SCCplusplusSearchDFS(starttime, iList, iSearch);
+            SCCplusplusSearchDFS(starttime, &node1, iSearch);
         }
     }
     else {
