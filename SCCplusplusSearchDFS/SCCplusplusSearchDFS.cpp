@@ -3,7 +3,7 @@
 #include "SCCplusplusSearchDFS.h"
 
 SNode* SCCplusplusSearchDFS(chrono::high_resolution_clock::time_point starttime, SNode* stNode, int iSearch) {
-	write(starttime, "Start Breadt-First Search");
+	write(starttime, "Start Depth-First Search");
 	write(starttime, "Searching for " + to_string(iSearch));
 	
 	SNode* found = NULL;
